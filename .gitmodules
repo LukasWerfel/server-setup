@@ -1,0 +1,3 @@
+[submodule "server/standardfile"]
+	path = server/standardfile
+	url = https://github.com/standardfile/ruby-server.git
