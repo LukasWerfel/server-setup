@@ -21,7 +21,7 @@ services:
      - ./nginx/wallabag.conf:/config/nginx/proxy-confs/wallabag.subdomain.conf
      - ./nginx/kanboard.conf:/config/nginx/proxy-confs/kanboard.subdomain.conf
      - ./nginx/bitwarden.conf:/config/nginx/proxy-confs/bitwarden.subdomain.conf
-     - ./nginx/standardnotes.conf:/config/nginx/proxy-confs/standardnotes.subdomain.conf
+     - ./nginx/standardfiles.conf:/config/nginx/proxy-confs/standardfiles.subdomain.conf
     ports:
      - "80:80"
      - "443:443"
