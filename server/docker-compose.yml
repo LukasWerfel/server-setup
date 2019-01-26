@@ -69,12 +69,3 @@ services:
       - MYSQL_ROOT_PASSWORD=${STANDARDFILE_DB_PASSWORD}
     volumes:
       - ./volumes/standardfile/db:/var/lib/mysql
-      
-  standardfile_nginx:
-    build:
-      context: ./standardfile
-      dockerfile: Dockerfile-nginx
-    links:
-      - standardfile:app
-    ports:
-      - "86:80"
