@@ -1,17 +1,6 @@
 version: '3'
 
 services:
-  #wireguard:
-  #  image: activeeos/wireguard-docker
-  #  cap_add:
-  #   - NET_ADMIN
-  #   - SYS_MODULE
-  #  volumes:
-  #   - /wireguard:/etc/wireguard
-  #   - /lib/modules:/lib/modules
-  #  ports:
-  #   - "51820:51820"
-    
   server:
     image: linuxserver/letsencrypt
     container_name: server
@@ -19,7 +8,6 @@ services:
      - ./volumes/server/config:/config
      - ./nginx/radicale.conf:/config/nginx/proxy-confs/radicale.subdomain.conf
      - ./nginx/wallabag.conf:/config/nginx/proxy-confs/wallabag.subdomain.conf
-     - ./nginx/kanboard.conf:/config/nginx/proxy-confs/kanboard.subdomain.conf
      - ./nginx/bitwarden.conf:/config/nginx/proxy-confs/bitwarden.subdomain.conf
      - ./nginx/standardfiles.conf:/config/nginx/proxy-confs/standardfiles.subdomain.conf
     ports:
@@ -29,7 +17,7 @@ services:
      - NET_ADMIN
     environment:
       - URL=${DOMAIN_NAME}
-      - SUBDOMAINS=rc,wb,bw,kb,sf
+      - SUBDOMAINS=rc,wb,bw,sf
       - VALIDATION=http
       - TZ=Europe/Madrid
       - PGID=1001
