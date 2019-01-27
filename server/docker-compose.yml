@@ -34,14 +34,6 @@ services:
      - ./volumes/wallabag/data/:/var/www/wallabag/data
      - ./volumes/wallabag/images:/var/www/wallabag/web/assets/images
 
-  kanboard:
-    image: kanboard/kanboard:latest
-    ports:
-      - "84:80"
-    volumes:
-      - ./volumes/kanboard/data/:/var/www/app/data
-      - ./volumes/kanboard/plugins/:/var/www/app/plugins
-
   standardfile:
     build:
       context: ./standardfile
@@ -61,7 +53,7 @@ services:
     links:
       - standardfile_db:db
     ports:
-      - "85:3000"
+      - "84:3000"
       
   standardfile_db:
     image: mysql:latest
