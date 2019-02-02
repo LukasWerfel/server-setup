@@ -9,6 +9,7 @@ services:
      - ./nginx/radicale.conf:/config/nginx/proxy-confs/radicale.subdomain.conf
      - ./nginx/wallabag.conf:/config/nginx/proxy-confs/wallabag.subdomain.conf
      - ./nginx/bitwarden.conf:/config/nginx/proxy-confs/bitwarden.subdomain.conf
+     - ./nginx/syncthing.conf:/config/nginx/proxy-confs/syncthing.subdomain.conf
      - ./nginx/standardfiles.conf:/config/nginx/proxy-confs/standardfiles.subdomain.conf
     ports:
      - "80:80"
@@ -17,7 +18,7 @@ services:
      - NET_ADMIN
     environment:
       - URL=${DOMAIN_NAME}
-      - SUBDOMAINS=rc,wb,bw,sf
+      - SUBDOMAINS=rc,wb,bw,sf,st
       - VALIDATION=http
       - TZ=Europe/Madrid
       - PGID=1001
