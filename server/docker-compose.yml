@@ -62,16 +62,3 @@ services:
       - MYSQL_ROOT_PASSWORD=${STANDARDFILE_DB_PASSWORD}
     volumes:
       - ./volumes/standardfile/db:/var/lib/mysql
-      
-  syncthing:
-    image: linuxserver/syncthing
-    ports:
-      - "8384:8384"
-      - "22000:22000"
-      - "21027:21027/udp"
-    environment:
-      - PGID=1001
-      - PUID=1001
-    volumes:
-     - ./volumes/syncthing/config/:/config/
-     - ./volumes/syncthing/mnt/:/mnt/
