@@ -19,6 +19,7 @@ services:
      - ./volumes/bitwarden/data/:/data/
     environment:
       SIGNUPS_ALLOWED: "false"
+      DOMAIN: "https://bw.${DOMAIN_NAME}"
      
 
   wallabag:
