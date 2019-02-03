@@ -18,7 +18,7 @@ services:
      - NET_ADMIN
     environment:
       - URL=${DOMAIN_NAME}
-      - SUBDOMAINS=rc,wb,bw,sf,nc
+      - SUBDOMAINS=wb,bw,sf,nc
       - VALIDATION=http
       - TZ=Europe/Madrid
       - PGID=1001
