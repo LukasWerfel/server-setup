@@ -6,7 +6,6 @@ services:
     container_name: server
     volumes:
      - ./volumes/server/config:/config
-     - ./nginx/radicale.conf:/config/nginx/proxy-confs/radicale.subdomain.conf
      - ./nginx/wallabag.conf:/config/nginx/proxy-confs/wallabag.subdomain.conf
      - ./nginx/bitwarden.conf:/config/nginx/proxy-confs/bitwarden.subdomain.conf
      - ./nginx/nextcloud.conf:/config/nginx/proxy-confs/nextcloud.subdomain.conf
