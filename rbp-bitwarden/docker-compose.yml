@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bitwarden:
+    container_name: bitwarden
+    image: mprasil/bitwarden:1.6.1-raspberry
+    ports:
+     - "80:80"
+    volumes:
+     - ./volumes/bitwarden/data/:/data/
+    environment:
+      SIGNUPS_ALLOWED: "false"
+      DOMAIN: "https://bw.${DOMAIN_NAME}"
