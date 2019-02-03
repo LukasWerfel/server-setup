@@ -1,15 +1,6 @@
 version: '3'
 
 services:
-  radicale:
-    image: tomsquest/docker-radicale
-    ports:
-      - "81:5232"
-    read_only: true
-    volumes:
-     - ./volumes/radicale/data/:/data
-     - ./volumes/radicale/config/:/config
-
   bitwarden:
     container_name: bitwarden
     image: mprasil/bitwarden
